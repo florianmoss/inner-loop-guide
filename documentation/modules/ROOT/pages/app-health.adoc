@@ -1,5 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:USER_ID: %USER_ID%
+:PROJECT: %PROJECT%
 
 = Monitor Application Health
 :navtitle: Monitor Application Health
@@ -83,7 +83,7 @@ image::openshift-inventory-events.png[OpenShift Inventory Events, 500]
 
 image::openshift-inventory-logs.png[OpenShift Inventory Logs, 500]
 
-Now, `*try to access your http://inventory-coolstore-{USER_ID}-dev.{APPS_HOSTNAME_SUFFIX}[Inventory Service^, role='params-link']*`.
+Now, `*try to access your Inventory application test page*`.
 **You don't have any response anymore** (as the process has been stopped previously).
 
 Often, applications need a restart to work correctly again.
@@ -92,7 +92,7 @@ In the OpenShift Web Console, `*click on 'Actions' -> 'Delete Pod' -> 'Delete'*`
 
 image::openshift-inventory-delete-pod.png[OpenShift Inventory Delete Pod, 700]
 
-A new instance (pod) will be redeployed. Once done, `*try to access again your http://inventory-coolstore-{USER_ID}-dev.{APPS_HOSTNAME_SUFFIX}[Inventory Service^, role='params-link']*`.
+A new instance (pod) will be redeployed. Once done, `*try to access again your Inventory application*`.
 
 **Now the _Inventory Service_ is working again.**
 
@@ -127,7 +127,7 @@ In your Workspace,
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-curl -w "\n" http://inventory-coolstore.{USER_ID}-dev.svc:8080/health
+curl -w "\n" http://inventory-coolstore:8080/health
 ----
 
 NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
@@ -214,7 +214,7 @@ After 3 failed checks, OpenShift automatically restarts the container.
 
 image::openshift-inventory-events-failed-check.png[OpenShift Inventory Event Failed Check, 500]
 
-Now, `*access to your http://inventory-coolstore-{USER_ID}-dev.{APPS_HOSTNAME_SUFFIX}[Inventory Service^, role='params-link']*`.
+Now, `*access to your Inventory application*`.
 The service is up and running again.
 
 [#understanding_readiness]
@@ -246,7 +246,7 @@ CLI::
 ----
 for i in {1..60}
 do 
-    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore.{USER_ID}-dev.svc:8080/actuator/health) == "200" ]
+    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore:8080/actuator/health) == "200" ]
     then 
         MSG="\033[0;32mThe request to Catalog Service has succeeded\033[0m"
     else 
@@ -321,7 +321,7 @@ In your Workspace, in the window called **'>_ workshop-tools terminal'**,
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-curl -w "\n" http://catalog-coolstore.{USER_ID}-dev.svc:8080/actuator/health
+curl -w "\n" http://catalog-coolstore:8080/actuator/health
 ----
 
 You should have the following output:
@@ -527,7 +527,7 @@ OpenShift provides container metrics out-of-the-box and displays how much memory
 each container has been consuming over time. 
 
 In the OpenShift Web Console, from the **Developer view**,
-`*click on 'Monitoring' then select your '{USER_ID}-dev' project*`.
+`*click on 'Monitoring' then select your project*`.
 
 In the project overview, you can see the different **Resource Usage** sections. 
 `*click on one graph to get more details*`.

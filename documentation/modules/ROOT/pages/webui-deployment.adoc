@@ -1,5 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:USER_ID: %USER_ID%
+:PROJECT: %PROJECT%
 :WORKSHOP_GIT_REPO: %WORKSHOP_GIT_REPO%
 :WORKSHOP_GIT_REF: %WORKSHOP_GIT_REF%
 

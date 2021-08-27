@@ -1,6 +1,6 @@
 {
   "name": "rhs-openshift-inner-loop-workshop-sandbox",
-  "description": "OpenShift Outer Loop Workshop ",
+  "description": "OpenShift Inner Loop Workshop for Sandbox",
   "homepage": "https://redhat-scholars.github.io/inner-loop-sandbox-guide",
   "author": {
     "email": "agroom@redhat.com",

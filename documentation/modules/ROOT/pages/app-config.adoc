@@ -1,5 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:USER_ID: %USER_ID%
+:PROJECT: %PROJECT%
 
 = Externalize Application Configuration
 :navtitle: Externalize Application Configuration
@@ -77,7 +77,7 @@ Then, enter the following information:
 |Value
 
 |Namespace*
-|{USER_ID}-dev
+|{PROJECT}
 
 |Memory Limit*
 |512Mi
@@ -121,7 +121,7 @@ Then, enter the following information:
 |Value
 
 |Namespace*
-|{USER_ID}-dev
+|{PROJECT}
 
 |Memory Limit*
 |512Mi
@@ -207,13 +207,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: inventory
-  namespace: {USER_ID}-dev
   labels:
     app: coolstore
     app.kubernetes.io/instance: inventory
 data:
   application.properties: |-
-    quarkus.datasource.url=jdbc:mariadb://inventory-mariadb.{USER_ID}-dev.svc:3306/inventorydb
+    quarkus.datasource.url=jdbc:mariadb://inventory-mariadb.:3306/inventorydb
     quarkus.datasource.username=inventory
     quarkus.datasource.password=inventory
 ----
@@ -242,7 +241,7 @@ CLI::
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc set volume dc/inventory-coolstore --add --configmap-name=inventory --mount-path=/deployments/config -n {USER_ID}-dev #<1> 
+oc set volume dc/inventory-coolstore --add --configmap-name=inventory --mount-path=/deployments/config #<1> 
 ----
 <1> Mounts the content of the **Inventory Config Map** as a file inside the **Inventory container**
 at **/deployments/config/application.properties **
@@ -258,14 +257,14 @@ and then **verify that the config map is in fact injected into the container** b
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc rsh -n {USER_ID}-dev -c inventory-coolstore dc/inventory-coolstore cat /deployments/config/application.properties
+oc rsh -c inventory-coolstore dc/inventory-coolstore cat /deployments/config/application.properties
 ----
 
 You should have the following output:
 
 [source,properties,subs="{markup-in-source}"]
 ----
-quarkus.datasource.url=jdbc:mariadb://inventory-mariadb.{USER_ID}-dev.svc:3306/inventorydb
+quarkus.datasource.url=jdbc:mariadb://inventory-mariadb:3306/inventorydb
 quarkus.datasource.username=inventory
 quarkus.datasource.password=inventory
 ----
@@ -277,7 +276,7 @@ loaded into the database**.
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc rsh -n {USER_ID}-dev dc/inventory-mariadb
+oc rsh dc/inventory-mariadb
 ----
 
 Once connected to the MariaDB container, `*run the following*`:
@@ -351,7 +350,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: catalog
-  namespace: {USER_ID}-dev
   labels:
     app: coolstore
     app.kubernetes.io/instance: catalog
@@ -376,20 +374,20 @@ tries to discover config maps, due to security reasons containers
 by default are not allowed to snoop around OpenShift clusters and discover objects. Security comes first, 
 and discovery is a privilege that needs to be granted to containers in each project. 
 
-Since you do want Spring Boot to discover the config maps inside the **{USER_ID}-dev** project, you 
+Since you do want Spring Boot to discover the config maps inside the default project, you 
 need to grant permission to the Spring Boot service account to access the OpenShift REST API and find the 
 config maps. 
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc policy add-role-to-user view -n {USER_ID}-dev -z default
+oc policy add-role-to-user view  -z default
 ----
 
 `*Delete the Catalog Pod*` to make it start again and look for the config maps:
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc delete pod -l deploymentconfig=catalog-coolstore -n {USER_ID}-dev
+oc delete pod -l deploymentconfig=catalog-coolstore 
 ----
 
 When the Catalog container is ready, verify that the PostgreSQL database is being 
@@ -397,7 +395,7 @@ used. Check the Catalog pod logs:
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc logs -c catalog-coolstore dc/catalog-coolstore -n {USER_ID}-dev | grep hibernate.dialect
+oc logs -c catalog-coolstore dc/catalog-coolstore| grep hibernate.dialect
 ----
 
 You should have the following output:
@@ -411,7 +409,7 @@ You can also connect to the Catalog PostgreSQL database and verify that the seed
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-oc rsh -n {USER_ID}-dev dc/catalog-postgresql
+oc rsh dc/catalog-postgresql
 ----
 
 Once connected to the PostgreSQL container, run the following:

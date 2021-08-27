@@ -1,13 +1,53 @@
 :markup-in-source: verbatim,attributes,quotes
-:USER_ID: %USER_ID%
+:PROJECT: %PROJECT%
 
-= Get your Developer Workspace
-:navtitle: Get your Developer Workspace
+= Get your Developer Sandbox and Workspace
+:navtitle: Get your Developer Sandbox and Workspace
 
-_10 MINUTE EXERCISE_
+_20 MINUTE EXERCISE_
 
-In this lab you will learn about providing your Developer Workspace with a Kubernetes-native development platform 
-and getting familiar with the OpenShift CLI and OpenShift Web Console.
+In this lab you will learn about getting your Red hat Developer Sandbox with a Kubernetes-native development platform 
+and getting familiar with the OpenShift CLI, OpenShift Web Console and CodeReady Workspaces.
+
+
+[#get_your_developer_sandbox]
+== Getting your Developer Sandbox for OpenShift
+
+The Red Hat Developer Sandbox is a great way to 
+access Red Hat’s products and technologies without setup or configuration, and start developing quicker than ever 
+before with our new sandbox environments for Red Hat OpenShift and CodeReady Workspaces Try your hand at the technologies 
+with our library of activities as well.
+
+[window=_blank, align="center"]
+image::sandbox-portal.png[Developer Sandbox, 600]
+
+The https://https://developers.redhat.com/developer-sandbox[Developer Sandbox for OpenShift^] is a Kubernetes-native environment for developing 
+software for OpenShift. You need to follow the *Get Started* process on this web site first, before attempting any of the workshop steps below.
+
+After verifying your email or mobile number you should you get access to your sandbox and be given a link to a login page to access the OpenShift Web Console, which looks like this:- 
+
+[window=_blank, align="center"]
+image::sandbox-login.png[Developer Sandbox, 500]
+
+
+[#login_to_openshift]
+== Log in to the OpenShift Developer Console
+
+OpenShift ships with a web-based console that will allow users to
+perform various tasks via a browser.
+
+Please login using the credentials provided when requesting the Developer Sandbox.
+
+After you have authenticated to the web console, you will be presented with a
+list of projects that your user has permission to work with. 
+
+`*Select the 'Developer View' then your "-dev" project*` to be taken to the project overview page
+which will list all of the routes, services, deployments, and pods that you have
+running as part of your project. There's maybe nothing much there now, but that's about to
+change.
+
+image::openshift-empty-project.png[OpenShift - Empty Project, 700]
+
 
 [#what_is_codeready_workspaces]
 == What is CodeReady Workspaces?
@@ -34,7 +74,7 @@ To achieve those core goals, https://access.redhat.com/products/red-hat-coderead
 --
 
 [#get_your_developer_workspace]
-== Getting your Developer Workspace with a single click
+== Getting your CodeReady Workspace
 
 https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^]  will provide you an out-of-box 
 *Developer Workspace* with all the tools and the dependencies we need to do the job. **And with only one single click!**
@@ -54,20 +94,93 @@ Providing a https://github.com/alexgroom/cloud-native-workshop/blob/5.1/devfile.
 to this file.
 ====
 
-`*Click on the 'Developer Workspace' button below*`
+CodeReady Workspaces is integrated into the Developer Sandox and is available from the OpenShift Web Console usng the *apps* button in the header bar.
 
-[link={CHE_URL}/dashboard/#/ide/user{USER_ID}/wksp-cloud-native]
 [window=_blank, align="center"]
 [role='params-link']
-image::developer-workspace-button.svg[Developer Workspace - Button, 300]
+image::launch-crw.png[Launch CodeReady Workspaces, 300]
 
 Then `*login*` and let the magic happens...
 
-image::che-login.png[Che - Login, 500]
+When CodeReady Workspaces starts, enter the following URL into the *Git Repo URL* field to load the devfile and click `*Create & Open*`
 
-Once completed, you will have a fully functional Browser-based IDE within the source code already imported.
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+https://github.com/alexgroom/cloud-native-workshop.git
+---- 
 
-image::che-workspace.png[Che - Workspace, 800]
+[window=_blank, align="center"]
+image::enter-devfile.png[Launching the workspace , 500]
+
+Once completed, you will have a fully functional Browser-based IDE within the source code already imported and 
+the IDE configured for our workshop tasks.
+
+image::che-workspace.png[Che - Workspace, 700]
+
+[#connect_your_workspace]
+== Connect Your Workspace to Your OpenShift Project
+
+Now you need to connect your CodeReady Workspace environment to your OpenShift development area i.e your project or namespace.
+
+First, in the OpenShift Developer console you need to `*Copy Your Login command*` which includes your authentication token for OpenShift access.
+The *Copy login command* can be found in the top right header bar of the web page under your login name:
+
+[window=_blank, align="center"]
+image::copy-login-command.png[Copy Login command , 300]
+
+Then you can follow the link to *Display the Token*:
+
+[window=_blank, align="center"]
+image::display-token.png[Copy Login command , 300]
+
+[window=_blank, align="center"]
+image::login-token.png[Login Token, 700]
+
+Now `*copy*` the whole *oc login* command, token and server address:
+
+Switching back to your CodeReady workspace.
+
+image::che-runtask.png[Che - RunTask, 500]
+
+Open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
+
+Now `*paste*` the *oc login* command into the terminal window created at the bottom of the browser page and *execute*.
+
+
+[tabs, subs="attributes+,+macros"]
+====
+
+
+--
+====
+
+The output should be as follows:
+
+[source,shell,subs="{markup-in-source}"]
+----
+
+$ oc login --token=sha256~yv5Y1pcRsrxxxxxxxxxx --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
+Logged into "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443" as "user" using the token provided.
+
+You have access to the following projects and can switch between them with 'oc project <projectname>':
+
+  * user-dev
+    user-stage
+
+Using project "user-dev".
+Welcome! See 'oc help' to get started.
+----
+
+If the default *using* project is not your `*-dev*` project then you need one more terminal command to select this:-
+
+[source,shell,subs="{markup-in-source}"]
+----
+
+$ oc project <your-user-name>-dev
+Now using project "user-dev" on server "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
+
+----
+
 
 [#what_is_odo]
 == What is OpenShift Do (odo)?
@@ -85,90 +198,5 @@ https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_od
 
 --
 
-[#connect_your_workspace]
-== Connect Your Workspace to Your OpenShift User
-
-First, in your Workspace,
-
-[tabs, subs="attributes+,+macros"]
-====
-
-
---
-====
-
-The output should be as follows:
-
-[source,shell,subs="{markup-in-source}"]
-----
-Connecting to the OpenShift cluster
-
-Login successful.
-
-You have one project on this server: "cn-project{USER_ID}"
-
-Using project "cn-project{USER_ID}".
-
-Welcome! See 'odo help' to get started.
-----
-
-Then, create your **Development Environment**:
-
-[tabs, subs="attributes+,+macros"]
-====
-
-IDE Task::
-+
--- 
-`*Click on 'Terminal' -> 'Run Task...' ->  'OpenShift - Create Development Project'*`
-
-image::che-runtask.png[Che - RunTask, 500]
---
-
-CLI::
-+
---
-`*Execute the following commands in the '>_ workshop_tools' terminal window*`
-
-[source,shell,subs="{markup-in-source}",role=copypaste]
-----
-odo project create {USER_ID}-dev
-----
-
-NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
---
-====
-
-The output should be as follows:
-
-[source,shell,subs="{markup-in-source}"]
-----
- ✓  Project '{USER_ID}-dev' is ready for use
- ✓  New project created and now using project: {USER_ID}-dev
-----
-
-[#login_to_openshift]
-== Log in to the OpenShift Developer Console
-
-OpenShift ships with a web-based console that will allow users to
-perform various tasks via a browser.
-
-`*Click on the 'Developer Console' button below*`
-
-[link={OPENSHIFT_CONSOLE_URL}]
-[window=_blank, align="center"]
-[role='params-link']
-image::developer-console-button.png[Developer Workspace - Button, 300]
-
-`*Enter your username and password*` and 
-then log in. After you have authenticated to the web console, you will be presented with a
-list of projects that your user has permission to work with. 
-
-`*Select the 'Developer View' then your '{USER_ID}-dev'*` to be taken to the project overview page
-which will list all of the routes, services, deployments, and pods that you have
-running as part of your project. There's nothing there now, but that's about to
-change.
-
-image::openshift-empty-project.png[OpenShift - Empty Project, 700]
 
 Now you are ready to get started with the labs!

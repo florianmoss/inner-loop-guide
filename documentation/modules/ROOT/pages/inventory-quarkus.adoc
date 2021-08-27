@@ -1,5 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:USER_ID: %USER_ID%
+:PROJECT: %PROJECT%
 
 = Create Inventory Service with Quarkus
 :navtitle: Create Inventory Service with Quarkus
@@ -503,8 +503,8 @@ odo component create --s2i
 |Which application do you want the component to be associated with (app)
 | **coolstore**
 
-|Which project go you want the component to be created in ({USER_ID}-dev)
-|_Empty ('{USER_ID}-dev' by default)_
+|Which project go you want the component to be created in ({PROJECT})
+|_Empty ('{PROJECT}' by default)_
 
 |Do you wish to set advanced options
 |_Empty ('No' by default)_
@@ -603,7 +603,7 @@ Configuration changes
  ✓  Applying configuration [95ms]
 
 Applying URL changes
-** ✓  URL inventory: http://inventory-coolstore-{USER_ID}-dev.{APPS_HOSTNAME_SUFFIX}/ created**
+** ✓  URL inventory: http://inventory-coolstore created**
 
 Pushing to component inventory of type binary
  ✓  Checking file changes for pushing [1ms]
