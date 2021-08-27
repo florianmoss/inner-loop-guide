@@ -1,11 +1,10 @@
 {
-  "name": "rhs-openshift-inner-loop-workshop",
+  "name": "rhs-openshift-inner-loop-workshop-sandbox",
   "description": "OpenShift Outer Loop Workshop ",
-  "homepage": "https://redhat-scholars.github.io/inner-loop-guide",
+  "homepage": "https://redhat-scholars.github.io/inner-loop-sandbox-guide",
   "author": {
-    "email": "madou@redhat.com",
-    "name": "Madou Coulibaly",
-    "url": "https://twitter.com/@madou_coulibaly"
+    "email": "agroom@redhat.com",
+    "name": "Alex Groom"
   },
   "dependencies": {
     "@antora/cli": "^2.3.1",
@@ -28,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redhat-scholars/inner-loop-guide.git"
+    "url": "git+https://github.com/alexgroom/inner-loop-guide.git"
   },
   "license": "Apache-2.0",
   "babel": {

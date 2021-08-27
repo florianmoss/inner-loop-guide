@@ -1,8 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:CHE_URL: http://codeready-workspaces.%APPS_HOSTNAME_SUFFIX%
 :USER_ID: %USER_ID%
-:OPENSHIFT_PASSWORD: %OPENSHIFT_PASSWORD%
-:OPENSHIFT_CONSOLE_URL: https://console-openshift-console.%APPS_HOSTNAME_SUFFIX%/topology/ns/my-project{USER_ID}/graph
 
 = Get your Developer Workspace
 :navtitle: Get your Developer Workspace
@@ -53,7 +50,7 @@ https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Worksp
 * tools that you need
 * application runtime definition
 
-Providing a https://github.com/mcouliba/cloud-native-workshop/blob/ocp4.6/devfile.yaml[devfile.yaml^] file inside a Git source repository signals to https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] to configure the project and runtime according 
+Providing a https://github.com/alexgroom/cloud-native-workshop/blob/5.1/devfile.yaml[devfile.yaml^] file inside a Git source repository signals to https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] to configure the project and runtime according 
 to this file.
 ====
 
@@ -64,7 +61,7 @@ to this file.
 [role='params-link']
 image::developer-workspace-button.svg[Developer Workspace - Button, 300]
 
-Then `*login as user{USER_ID}/{OPENSHIFT_PASSWORD}*` and let the magic happens...
+Then `*login*` and let the magic happens...
 
 image::che-login.png[Che - Login, 500]
 
@@ -91,30 +88,11 @@ https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_od
 [#connect_your_workspace]
 == Connect Your Workspace to Your OpenShift User
 
-First, in your {CHE_URL}[Workspace^, role='params-link'],
+First, in your Workspace,
 
 [tabs, subs="attributes+,+macros"]
 ====
 
-IDE Task::
-+
--- 
-`*Click on 'Terminal' -> 'Run Task...' ->  'OpenShift - Login'*`
-
-image::che-runtask.png[Che - RunTask, 500]
---
-
-CLI::
-+
---
-`*Execute the following commands in the '>_ workshop_tools' terminal window*`
-
-[source,shell,subs="{markup-in-source}",role=copypaste]
-----
-odo login $(oc whoami --show-server) --username=user{USER_ID} --password={OPENSHIFT_PASSWORD} --insecure-skip-tls-verify
-----
-
-NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
 
 --
 ====
@@ -154,7 +132,7 @@ CLI::
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-odo project create my-project{USER_ID}
+odo project create {USER_ID}-dev
 ----
 
 NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
@@ -165,8 +143,8 @@ The output should be as follows:
 
 [source,shell,subs="{markup-in-source}"]
 ----
- ✓  Project 'my-project{USER_ID}' is ready for use
- ✓  New project created and now using project: my-project{USER_ID}
+ ✓  Project '{USER_ID}-dev' is ready for use
+ ✓  New project created and now using project: {USER_ID}-dev
 ----
 
 [#login_to_openshift]
@@ -182,11 +160,11 @@ perform various tasks via a browser.
 [role='params-link']
 image::developer-console-button.png[Developer Workspace - Button, 300]
 
-`*Enter your username and password (user{USER_ID}/{OPENSHIFT_PASSWORD})*` and 
+`*Enter your username and password*` and 
 then log in. After you have authenticated to the web console, you will be presented with a
 list of projects that your user has permission to work with. 
 
-`*Select the 'Developer View' then your 'my-project{USER_ID}'*` to be taken to the project overview page
+`*Select the 'Developer View' then your '{USER_ID}-dev'*` to be taken to the project overview page
 which will list all of the routes, services, deployments, and pods that you have
 running as part of your project. There's nothing there now, but that's about to
 change.

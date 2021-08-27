@@ -1,8 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
-:APPS_HOSTNAME_SUFFIX: %APPS_HOSTNAME_SUFFIX%
-:CHE_URL: http://codeready-workspaces.%APPS_HOSTNAME_SUFFIX%
 :USER_ID: %USER_ID%
-:OPENSHIFT_CONSOLE_URL: https://console-openshift-console.%APPS_HOSTNAME_SUFFIX%/topology/ns/my-project{USER_ID}/graph
 
 = Create Inventory Service with Quarkus
 :navtitle: Create Inventory Service with Quarkus
@@ -170,7 +167,7 @@ triggers a scan of the workspace, and if any changes are detected, the Java file
 your request is then serviced by the redeployed application. If there are any issues with compilation or deployment an error page 
 will let you know.
 
-First, in your {CHE_URL}[Workspace^, role='params-link'],
+First, in your Workspace,
 
 [tabs, subs="attributes+,+macros"]
 ====
@@ -402,7 +399,7 @@ The REST API returned a JSON object representing the inventory count for this pr
 [#stop_development_mode]
 == Stop the Development Mode
 
-In your {CHE_URL}[Workspace^, role='params-link'], stop the service as follows:
+In your Workspace, stop the service as follows:
 
 [tabs, subs="attributes+,+macros"]
 ====
@@ -425,7 +422,7 @@ CLI::
 
 It’s time to deploy your service on OpenShift using https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html[odo^].
 
-In your {CHE_URL}[Workspace^, role='params-link'],
+In your Workspace,
 
 [tabs, subs="attributes+,+macros"]
 ====
@@ -506,8 +503,8 @@ odo component create --s2i
 |Which application do you want the component to be associated with (app)
 | **coolstore**
 
-|Which project go you want the component to be created in (my-project{USER_ID})
-|_Empty ('my-project{USER_ID}' by default)_
+|Which project go you want the component to be created in ({USER_ID}-dev)
+|_Empty ('{USER_ID}-dev' by default)_
 
 |Do you wish to set advanced options
 |_Empty ('No' by default)_
@@ -606,7 +603,7 @@ Configuration changes
  ✓  Applying configuration [95ms]
 
 Applying URL changes
-** ✓  URL inventory: http://inventory-coolstore-my-project{USER_ID}.{APPS_HOSTNAME_SUFFIX}/ created**
+** ✓  URL inventory: http://inventory-coolstore-{USER_ID}-dev.{APPS_HOSTNAME_SUFFIX}/ created**
 
 Pushing to component inventory of type binary
  ✓  Checking file changes for pushing [1ms]
@@ -621,7 +618,7 @@ in one or more pods which are the unit of runtime deployment and consists of the
 [#test_your_service]
 == Test your Service
 
-In the {OPENSHIFT_CONSOLE_URL}[OpenShift Web Console^, role='params-link'], from the **Developer view**,
+In the OpenShift Web Console, from the **Developer view**,
 `*click on the 'Open URL' icon of the Inventory Service*`
 
 image::openshift-inventory-topology.png[OpenShift - Inventory Topology, 700]
