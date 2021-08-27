@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Get your Developer Sandbox and Workspace :: OpenShift Inner Loop Workshop for Sandbox</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/course-template/inner-loop/5.1/developer-workspace.html">
+    <link rel="prev" href="introduction.html">
+    <link rel="next" href="inventory-quarkus.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img
+          src="../../_/img/header_logo.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" href="https://redhat-scholars.github.io/course-template">OpenShift Inner Loop Workshop for Sandbox</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Books</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">CheatSheets</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">CheatSheet A</a>
+            <a class="navbar-item" href="#">CheatSheet B</a>
+            <a class="navbar-item" href="#">CheatSheet C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Upcoming Events</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Event A</a>
+            <a class="navbar-item" href="#">Event B</a>
+            <a class="navbar-item" href="#">Event C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Tutorial A</a>
+            <a class="navbar-item" href="#">Tutorial B</a>
+            <a class="navbar-item" href="#">Tutorial C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="inner-loop" data-version="5.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html" class=" query-params-link">OpenShift Inner Loop Workshop for Sandbox</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction.html">1. Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="developer-workspace.html">2. Get your Developer Sandbox and Workspace</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="inventory-quarkus.html">3. Create Inventory Service with Quarkus</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="catalog-spring-boot.html">4. Create Catalog Service with Spring Boot</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="gateway-dotnet.html">5. Create Gateway Service with .Net</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="webui-deployment.html">6. Deploy Web UI with with Node.js and AngularJS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="app-health.html">7. Monitor Application Health</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="app-config.html">8. Externalize Application Configuration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenShift Inner Loop Workshop for Sandbox</span>
+    <span class="version">5.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">OpenShift Inner Loop Workshop for Sandbox</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">5.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenShift Inner Loop Workshop for Sandbox</a></li>
+    <li><a href="developer-workspace.html">2. Get your Developer Sandbox and Workspace</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/alexgroom/inner-loop-guide/edit/5.1/documentation/modules/ROOT/pages/developer-workspace.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Get your Developer Sandbox and Workspace</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>20 MINUTE EXERCISE</em></p>
+</div>
+<div class="paragraph">
+<p>In this lab you will learn about getting your Red hat Developer Sandbox with a Kubernetes-native development platform
+and getting familiar with the OpenShift CLI, OpenShift Web Console and CodeReady Workspaces.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get_your_developer_sandbox"><a class="anchor" href="#get_your_developer_sandbox"></a>Getting your Developer Sandbox for OpenShift</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Red Hat Developer Sandbox is a great way to
+access Red Hat’s products and technologies without setup or configuration, and start developing quicker than ever
+before with our new sandbox environments for Red Hat OpenShift and CodeReady Workspaces Try your hand at the technologies
+with our library of activities as well.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/sandbox-portal.png" alt="Developer Sandbox" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://https://developers.redhat.com/developer-sandbox" target="_blank" rel="noopener">Developer Sandbox for OpenShift</a> is a Kubernetes-native environment for developing
+software for OpenShift. You need to follow the <strong>Get Started</strong> process on this web site first, before attempting any of the workshop steps below.</p>
+</div>
+<div class="paragraph">
+<p>After verifying your email or mobile number you should you get access to your sandbox and be given a link to a login page to access the OpenShift Web Console, which looks like this:-</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/sandbox-login.png" alt="Developer Sandbox" width="500">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="login_to_openshift"><a class="anchor" href="#login_to_openshift"></a>Log in to the OpenShift Developer Console</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift ships with a web-based console that will allow users to
+perform various tasks via a browser.</p>
+</div>
+<div class="paragraph">
+<p>Please login using the credentials provided when requesting the Developer Sandbox.</p>
+</div>
+<div class="paragraph">
+<p>After you have authenticated to the web console, you will be presented with a
+list of projects that your user has permission to work with.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>Select the 'Developer View' then your "-dev" project</strong></code> to be taken to the project overview page
+which will list all of the routes, services, deployments, and pods that you have
+running as part of your project. There&#8217;s maybe nothing much there now, but that&#8217;s about to
+change.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/openshift-empty-project.png" alt="OpenShift - Empty Project" width="700">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what_is_codeready_workspaces"><a class="anchor" href="#what_is_codeready_workspaces"></a>What is CodeReady Workspaces?</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/codereadyworkspaces-logo.png" alt="CodeReady Workspaces" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> is a Kubernetes-native IDE and developer collaboration platform.</p>
+</div>
+<div class="paragraph">
+<p>As an open-source project, the core goals of <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a>  are to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Accelerate project and developer onboarding:</strong> As a zero-install development environment that runs in your browser, <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a>  makes it easy for anyone to join your team and contribute to a project.</p>
+</li>
+<li>
+<p><strong>Remove inconsistency between developer environments:</strong> No more: “But it works on my machine.” Your code works exactly the same way in everyone’s environment.</p>
+</li>
+<li>
+<p><strong>Provide built-in security and enterprise readiness:</strong> As <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a>  becomes a viable replacement for VDI solutions, it must be secure and it must support enterprise requirements, such as role-based access control and the ability to remove all source code from developer machines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To achieve those core goals, <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a>  provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Workspaces:</strong> Container-based developer workspaces providing all the tools and dependencies needed to code, build, test, run, and debug applications.</p>
+</li>
+<li>
+<p><strong>Browser-based IDEs:</strong> Bundled browser-based IDEs with language tooling, debuggers, terminal, VCS integration, and much more.</p>
+</li>
+<li>
+<p><strong>Extensible platform:</strong> Bring your own IDE. Define, configure, and extend the tools that you need for your application by using plug-ins, which are compatible with Visual Studio Code extensions.</p>
+</li>
+<li>
+<p><strong>Enterprise Integration:</strong> Multi-user capabilities, including Keycloak for authentication and integration with LDAP or AD.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get_your_developer_workspace"><a class="anchor" href="#get_your_developer_workspace"></a>Getting your CodeReady Workspace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a>  will provide you an out-of-box
+<strong>Developer Workspace</strong> with all the tools and the dependencies we need to do the job. <strong>And with only one single click!</strong></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Devfile</div>
+<div class="paragraph">
+<p><a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> uses <a href="https://docs.devfile.io/devfile/index.html" target="_blank" rel="noopener">Devfiles</a> to automate the provisioning of a specific workspace by defining:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>projects to clone</p>
+</li>
+<li>
+<p>browser IDE to use</p>
+</li>
+<li>
+<p>preconfigured commands</p>
+</li>
+<li>
+<p>tools that you need</p>
+</li>
+<li>
+<p>application runtime definition</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Providing a <a href="https://github.com/alexgroom/cloud-native-workshop/blob/5.1/devfile.yaml" target="_blank" rel="noopener">devfile.yaml</a> file inside a Git source repository signals to <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> to configure the project and runtime according
+to this file.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>CodeReady Workspaces is integrated into the Developer Sandox and is available from the OpenShift Web Console usng the <strong>apps</strong> button in the header bar.</p>
+</div>
+<div class="imageblock text-center params-link">
+<div class="content">
+<img src="_images/launch-crw.png" alt="Launch CodeReady Workspaces" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Then <code><strong>login</strong></code> and let the magic happens&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>When CodeReady Workspaces starts, enter the following URL into the <strong>Git Repo URL</strong> field to load the devfile and click <code><strong>Create &amp; Open</strong></code></p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">https://github.com/alexgroom/cloud-native-workshop.git</code></pre>
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/enter-devfile.png" alt="Launching the workspace" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Once completed, you will have a fully functional Browser-based IDE within the source code already imported and
+the IDE configured for our workshop tasks.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/che-workspace.png" alt="Che - Workspace" width="700">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="connect_your_workspace"><a class="anchor" href="#connect_your_workspace"></a>Connect Your Workspace to Your OpenShift Project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now you need to connect your CodeReady Workspace environment to your OpenShift development area i.e your project or namespace.</p>
+</div>
+<div class="paragraph">
+<p>First, in the OpenShift Developer console you need to <code><strong>Copy Your Login command</strong></code> which includes your authentication token for OpenShift access.
+The <strong>Copy login command</strong> can be found in the top right header bar of the web page under your login name:</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/copy-login-command.png" alt="Copy Login command" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Then you can follow the link to <strong>Display the Token</strong>:</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/display-token.png" alt="Copy Login command" width="300">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/login-token.png" alt="Login Token" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>Now <code><strong>copy</strong></code> the whole <strong>oc login</strong> command, token and server address:</p>
+</div>
+<div class="paragraph">
+<p>Switching back to your CodeReady workspace.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/che-runtask.png" alt="Che - RunTask" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Open a '&gt;_ workshop_tools' terminal window, <code><strong>click on 'Terminal' &#8594; 'Open Terminal in specific container' &#8594;  'workshop-tools'</strong></code></p>
+</div>
+<div class="paragraph">
+<p>Now <code><strong>paste</strong></code> the <strong>oc login</strong> command into the terminal window created at the bottom of the browser page and <strong>execute</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The output should be as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ oc login --token=sha256~yv5Y1pcRsrxxxxxxxxxx --server=https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
+Logged into "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443" as "user" using the token provided.
+
+You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
+
+  * user-dev
+    user-stage
+
+Using project "user-dev".
+Welcome! See 'oc help' to get started.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the default <strong>using</strong> project is not your <code><strong>-dev</strong></code> project then you need one more terminal command to select this:-</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ oc project &lt;your-user-name&gt;-dev
+Now using project "user-dev" on server "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what_is_odo"><a class="anchor" href="#what_is_odo"></a>What is OpenShift Do (odo)?</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">OpenShift Do (odo)</div>
+<div class="paragraph">
+<p><a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">OpenShift Do (odo)</a> is a CLI tool for creating applications on OpenShift Container Platform and Kubernetes.
+With <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>, you can write, build, and debug applications on a cluster without the need to administer the cluster itself.
+Creating deployment configurations, build configurations, service routes and other OpenShift Container Platform or Kubernetes elements are all automated by <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>.</p>
+</div>
+<div class="paragraph">
+<p>Existing tools such as <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/openshift_cli/getting-started-cli.html" target="_blank" rel="noopener">OpenShift CLI (oc)</a> are operations-focused and require a deep understanding of Kubernetes and OpenShift Container Platform concepts.
+<a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a> abstracts away complex Kubernetes and OpenShift Container Platform concepts allowing developers to focus on what is most important to them: <strong>code</strong>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you are ready to get started with the labs!</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="introduction.html" class="query-params-link">1. Introduction</a></span>
+  <span class="next"><a href="inventory-quarkus.html" class="query-params-link">3. Create Inventory Service with Quarkus</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../../_/js/vendor/clipboard.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
