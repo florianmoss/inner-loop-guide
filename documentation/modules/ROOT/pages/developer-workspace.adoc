@@ -171,14 +171,19 @@ Using project "user-dev".
 Welcome! See 'oc help' to get started.
 ----
 
-If the default *using* project is not your `*-dev*` project then you need one more terminal command to select this:-
+To make sure the CodeReady development environment is setup for the development tools you will use you need one more 
+terminal command to complete this:-
+
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+odo project set ${CHE_WORKSPACE_NAMESPACE}-dev
+----
+
+And this should confirm the action with a response like this:
 
 [source,shell,subs="{markup-in-source}"]
 ----
-
-$ oc project <your-user-name>-dev
-Now using project "user-dev" on server "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443
-
+Switched to project : user-dev
 ----
 
 
@@ -200,3 +205,49 @@ https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_od
 
 
 Now you are ready to get started with the labs!
+
+
+
+[#trouble_shooting_tips]
+== Trouble Shooting Tips
+
+We hope you have a good workshop, but here are a few tips and tricks that may make it run better.
+
+`*What browser should I be using for this workshop*`
+
+The whole workshop runs in your browser environment which allows us to support a variety of developer platforms from Windows, Mac and Linux.
+We find the best browser for this workshop is Firefox or Chrome browser.
+
+`*Workshop stops or freezes*`
+
+Everything here is browser based so might have the odd glitch. The easiets resoltuion to a number of problems is just to refresh the browser, 
+or worse case restart the browser. All you work is stored centrally on our services so you should juts be able to re-attach 
+to your workspace and OpenShift project and continue.
+
+`*Having problems seeing CodeReady Workspace*`
+
+CodeReady Workspaces use secure web sockets for its UI. If you are having problems try this test web site https://websocketstest.com. 
+All results should be green to proceed. If this test fails please check that you a direct access to the internet, i.e disable any VPNs
+web proxies etc. If you are using a corporate device you may need to switch to a personal computer.
+
+`*I've been logged out or need to restart the workspace*`
+
+The workshop will take a few hours to complete all the way through, if you use the system continuosly throughout 
+that period you will not see this issue.
+
+*Re-login to the Red Hat* Your authentication token will need to refresh for security so expect to have login again. 
+You will need you Sandbox credentials daily but they should be cached.
+
+*Re-login from CodeReady* CodeReady can perform local tasks like builds, but usually needs to connect to your openShift project
+to deploy. If your CodeReady deployment tasks fail chance are you need to re-login to OpenShift from CodeReady. Use the instruction
+on this page *Connect Your Workspace to Your OpenShift project*. Also make sure you check that your `*-dev*` project is selected.
+
+*Restart CodeReady Workspaces* To save resources CodeReady will idle down. You may need to open or start your workspace again. After doing this, 
+please check that you repeat the *Connect Your Workspace to Your OpenShift project* step.
+
+`*My OpenShift pods have all gone to idle*` 
+
+If left for a long period (like overnight) your OpenShift project will idle down all its running pods. On the 
+Topology display they will show up with white rings. Normally these rings would be dark blue if the pod is active. You need to select each 
+*Deployment* or *DeploymentConfig* that you have created in turn by clicking on the circle, then on the pop-out select the blue (D) or (DC) text. 
+Then using the circle marked as *Scaled to 0* increase the Pod count up to 1. The ring should turn blue aftre about 30 seconds.
