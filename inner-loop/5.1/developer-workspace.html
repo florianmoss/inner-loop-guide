@@ -395,12 +395,20 @@ Welcome! See 'oc help' to get started.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If the default <strong>using</strong> project is not your <code><strong>-dev</strong></code> project then you need one more terminal command to select this:-</p>
+<p>To make sure the CodeReady development environment is setup for the development tools you will use you need one more
+terminal command to complete this:-</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">odo project set ${CHE_WORKSPACE_NAMESPACE}-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And this should confirm the action with a response like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ oc project &lt;your-user-name&gt;-dev
-Now using project "user-dev" on server "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Switched to project : user-dev</code></pre>
 </div>
 </div>
 </div>
@@ -424,6 +432,66 @@ Creating deployment configurations, build configurations, service routes and oth
 </div>
 <div class="paragraph">
 <p>Now you are ready to get started with the labs!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trouble_shooting_tips"><a class="anchor" href="#trouble_shooting_tips"></a>Trouble Shooting Tips</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We hope you have a good workshop, but here are a few tips and tricks that may make it run better.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>What browser should I be using for this workshop</strong></code></p>
+</div>
+<div class="paragraph">
+<p>The whole workshop runs in your browser environment which allows us to support a variety of developer platforms from Windows, Mac and Linux.
+We find the best browser for this workshop is Firefox or Chrome browser.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>Workshop stops or freezes</strong></code></p>
+</div>
+<div class="paragraph">
+<p>Everything here is browser based so might have the odd glitch. The easiets resoltuion to a number of problems is just to refresh the browser,
+or worse case restart the browser. All you work is stored centrally on our services so you should juts be able to re-attach
+to your workspace and OpenShift project and continue.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>Having problems seeing CodeReady Workspace</strong></code></p>
+</div>
+<div class="paragraph">
+<p>CodeReady Workspaces use secure web sockets for its UI. If you are having problems try this test web site <a href="https://websocketstest.com" class="bare">https://websocketstest.com</a>.
+All results should be green to proceed. If this test fails please check that you a direct access to the internet, i.e disable any VPNs
+web proxies etc. If you are using a corporate device you may need to switch to a personal computer.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>I&#8217;ve been logged out or need to restart the workspace</strong></code></p>
+</div>
+<div class="paragraph">
+<p>The workshop will take a few hours to complete all the way through, if you use the system continuosly throughout
+that period you will not see this issue.</p>
+</div>
+<div class="paragraph">
+<p><strong>Re-login to the Red Hat</strong> Your authentication token will need to refresh for security so expect to have login again.
+You will need you Sandbox credentials daily but they should be cached.</p>
+</div>
+<div class="paragraph">
+<p><strong>Re-login from CodeReady</strong> CodeReady can perform local tasks like builds, but usually needs to connect to your openShift project
+to deploy. If your CodeReady deployment tasks fail chance are you need to re-login to OpenShift from CodeReady. Use the instruction
+on this page <strong>Connect Your Workspace to Your OpenShift project</strong>. Also make sure you check that your <code><strong>-dev</strong></code> project is selected.</p>
+</div>
+<div class="paragraph">
+<p><strong>Restart CodeReady Workspaces</strong> To save resources CodeReady will idle down. You may need to open or start your workspace again. After doing this,
+please check that you repeat the <strong>Connect Your Workspace to Your OpenShift project</strong> step.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>My OpenShift pods have all gone to idle</strong></code></p>
+</div>
+<div class="paragraph">
+<p>If left for a long period (like overnight) your OpenShift project will idle down all its running pods. On the
+Topology display they will show up with white rings. Normally these rings would be dark blue if the pod is active. You need to select each
+<strong>Deployment</strong> or <strong>DeploymentConfig</strong> that you have created in turn by clicking on the circle, then on the pop-out select the blue (D) or (DC) text.
+Then using the circle marked as <strong>Scaled to 0</strong> increase the Pod count up to 1. The ring should turn blue aftre about 30 seconds.</p>
 </div>
 </div>
 </div>
