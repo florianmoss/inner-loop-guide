@@ -51,7 +51,7 @@ a persistent storage that survives the container itself. You can deploy database
 regardless of what happens to the container itself, the data is safe and can be used by the next 
 database container.
 
-Let's create a https://docs.openshift.com/container-platform/4.2/welcome/index.html[MariaDB database^] 
+Let's create a https://docs.openshift.com/container-platform/4.7/welcome/index.html[MariaDB database^] 
 for the **Inventory Service** using the MariaDB template that is provided out-of-the-box:
 
 [TIP]
@@ -77,7 +77,7 @@ Then, enter the following information:
 |Value
 
 |Namespace*
-|{PROJECT}
+|'user'-stage
 
 |Memory Limit*
 |512Mi
@@ -121,7 +121,7 @@ Then, enter the following information:
 |Value
 
 |Namespace*
-|{PROJECT}
+|'user'-stage
 
 |Memory Limit*
 |512Mi

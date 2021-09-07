@@ -1,7 +1,5 @@
 :markup-in-source: verbatim,attributes,quotes
 :PROJECT: %PROJECT%
-:WORKSHOP_GIT_REPO: %WORKSHOP_GIT_REPO%
-:WORKSHOP_GIT_REF: %WORKSHOP_GIT_REF%
 
 = Deploy Web UI with with Node.js and AngularJS
 :navtitle: Deploy Web UI with with Node.js and AngularJS
@@ -59,10 +57,10 @@ Then, enter the following information:
 |Value
 
 |Git Repo URL
-|{WORKSHOP_GIT_REPO}
+|\https://github.com/alexgroom/cloud-native-workshop.git
 
 |Git Reference
-|{WORKSHOP_GIT_REF}
+|5.1
 
 |Context Dir
 |/labs/web-nodejs
@@ -87,7 +85,9 @@ Then, enter the following information:
 
 |Labels
 |app=coolstore
+
 app.kubernetes.io/instance=web
+
 app.kubernetes.io/part-of=coolstore
 
 

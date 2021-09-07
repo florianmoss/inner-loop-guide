@@ -21,7 +21,7 @@ with our library of activities as well.
 [window=_blank, align="center"]
 image::sandbox-portal.png[Developer Sandbox, 600]
 
-The https://https://developers.redhat.com/developer-sandbox[Developer Sandbox for OpenShift^] is a Kubernetes-native environment for developing 
+The https://developers.redhat.com/developer-sandbox[Developer Sandbox for OpenShift^] is a Kubernetes-native environment for developing 
 software for OpenShift. You need to follow the *Get Started* process on this web site first, before attempting any of the workshop steps below.
 
 After verifying your email or mobile number you should you get access to your sandbox and be given a link to a login page to access the OpenShift Web Console, which looks like this:- 
@@ -41,7 +41,7 @@ Please login using the credentials provided when requesting the Developer Sandbo
 After you have authenticated to the web console, you will be presented with a
 list of projects that your user has permission to work with. 
 
-`*Select the 'Developer View' then your "-dev" project*` to be taken to the project overview page
+`*Select the 'Developer View' then your "-stage" project*` to be taken to the project overview page
 which will list all of the routes, services, deployments, and pods that you have
 running as part of your project. There's maybe nothing much there now, but that's about to
 change.
@@ -140,7 +140,7 @@ Now `*copy*` the whole *oc login* command, token and server address:
 
 Switching back to your CodeReady workspace.
 
-image::che-runtask.png[Che - RunTask, 500]
+image::che-open-terminal.png[Che - RunTask, 500]
 
 Open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
 
@@ -176,14 +176,14 @@ terminal command to complete this:-
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-odo project set ${CHE_WORKSPACE_NAMESPACE}-dev
+odo project set ${CHE_WORKSPACE_NAMESPACE}-stage
 ----
 
 And this should confirm the action with a response like this:
 
 [source,shell,subs="{markup-in-source}"]
 ----
-Switched to project : user-dev
+Switched to project : user-stage
 ----
 
 
@@ -204,33 +204,38 @@ https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_od
 --
 
 
-Now you are ready to get started with the labs!
+*Now you are ready to get started with the labs!*
 
 
 
 [#trouble_shooting_tips]
-== Trouble Shooting Tips
+== Workshop Trouble Shooting Tips
 
 We hope you have a good workshop, but here are a few tips and tricks that may make it run better.
 
-`*What browser should I be using for this workshop*`
+=== What browser should I be using for this workshop?
 
 The whole workshop runs in your browser environment which allows us to support a variety of developer platforms from Windows, Mac and Linux.
-We find the best browser for this workshop is Firefox or Chrome browser.
+We find the best browser for this workshop is *Firefox* or *Chrome* browser.
 
-`*Workshop stops or freezes*`
+=== Workshop stops or freezes ===
 
 Everything here is browser based so might have the odd glitch. The easiets resoltuion to a number of problems is just to refresh the browser, 
 or worse case restart the browser. All you work is stored centrally on our services so you should juts be able to re-attach 
-to your workspace and OpenShift project and continue.
+to your workspace and OpenShift project and continue. If refreshing the browser doesn't seem to work then try closing the CodeReady browser tab 
+and re-launch it from the OpenShift Web Console usng the *apps* button in the header bar.
 
-`*Having problems seeing CodeReady Workspace*`
+[window=_blank, align="center"]
+[role='params-link']
+image::launch-crw.png[Launch CodeReady Workspaces, 300]
+
+=== Having problems seeing CodeReady Workspace? ===
 
 CodeReady Workspaces use secure web sockets for its UI. If you are having problems try this test web site https://websocketstest.com. 
 All results should be green to proceed. If this test fails please check that you a direct access to the internet, i.e disable any VPNs
 web proxies etc. If you are using a corporate device you may need to switch to a personal computer.
 
-`*I've been logged out or need to restart the workspace*`
+=== I've been logged out or need to restart the workspace ===
 
 The workshop will take a few hours to complete all the way through, if you use the system continuosly throughout 
 that period you will not see this issue.
@@ -240,14 +245,20 @@ You will need you Sandbox credentials daily but they should be cached.
 
 *Re-login from CodeReady* CodeReady can perform local tasks like builds, but usually needs to connect to your openShift project
 to deploy. If your CodeReady deployment tasks fail chance are you need to re-login to OpenShift from CodeReady. Use the instruction
-on this page *Connect Your Workspace to Your OpenShift project*. Also make sure you check that your `*-dev*` project is selected.
+on this page *Connect Your Workspace to Your OpenShift project*. Also make sure you check that your `*-stage*` project is selected.
 
 *Restart CodeReady Workspaces* To save resources CodeReady will idle down. You may need to open or start your workspace again. After doing this, 
 please check that you repeat the *Connect Your Workspace to Your OpenShift project* step.
 
-`*My OpenShift pods have all gone to idle*` 
+=== My OpenShift pods have all gone to idle ===
 
 If left for a long period (like overnight) your OpenShift project will idle down all its running pods. On the 
 Topology display they will show up with white rings. Normally these rings would be dark blue if the pod is active. You need to select each 
 *Deployment* or *DeploymentConfig* that you have created in turn by clicking on the circle, then on the pop-out select the blue (D) or (DC) text. 
 Then using the circle marked as *Scaled to 0* increase the Pod count up to 1. The ring should turn blue aftre about 30 seconds.
+
+=== How do I cleanup after running this workshop? ===
+
+There is a terminal task included in the workshop to delete all the elements of the Inner Loop workshop.
+
+*Click on 'Terminal' -> 'Run Task...' ->  'OpenShift - Cleanup'*

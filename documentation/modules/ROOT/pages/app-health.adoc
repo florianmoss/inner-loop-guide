@@ -76,7 +76,7 @@ pkill -STOP java
 
 So **you just suspend the _Inventory Service_ java process** to simulate a stuck situation.
 
-In the OpenShift Web Console, `*click on the 'Events' and 'Logs' tabs *` and notice that 
+In the OpenShift Web Console, `*click on the 'Events' and 'Logs' tabs*` and notice that 
 **everything seems to be ok**.
 
 image::openshift-inventory-events.png[OpenShift Inventory Events, 500]
@@ -127,7 +127,7 @@ In your Workspace,
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-curl -w "\n" http://inventory-coolstore:8080/health
+curl -w "\n" http://inventory-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/health
 ----
 
 NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'Open Terminal in specific container' ->  'workshop-tools'*`
@@ -246,7 +246,7 @@ CLI::
 ----
 for i in {1..60}
 do 
-    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore:8080/actuator/health) == "200" ]
+    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/actuator/health) == "200" ]
     then 
         MSG="\033[0;32mThe request to Catalog Service has succeeded\033[0m"
     else 
@@ -321,7 +321,7 @@ In your Workspace, in the window called **'>_ workshop-tools terminal'**,
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-curl -w "\n" http://catalog-coolstore:8080/actuator/health
+curl -w "\n" http://catalog-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/actuator/health
 ----
 
 You should have the following output:
