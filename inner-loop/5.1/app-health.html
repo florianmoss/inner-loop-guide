@@ -245,7 +245,7 @@ where it cannot perform as it should. Let&#8217;s access inside the container an
 <p>So <strong>you just suspend the <em>Inventory Service</em> java process</strong> to simulate a stuck situation.</p>
 </div>
 <div class="paragraph">
-<p>In the OpenShift Web Console, <code>*click on the 'Events' and 'Logs' tabs *</code> and notice that
+<p>In the OpenShift Web Console, <code><strong>click on the 'Events' and 'Logs' tabs</strong></code> and notice that
 <strong>everything seems to be ok</strong>.</p>
 </div>
 <div class="imageblock">
@@ -318,7 +318,7 @@ In your Workspace, <code><strong>edit the '/projects/workshop/labs/inventory-qua
 </div>
 <div class="listingblock copypaste">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -w "\n" http://inventory-coolstore:8080/health</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -w "\n" http://inventory-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/health</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -498,7 +498,7 @@ The service is up and running again.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">for i in {1..60}
 do
-    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore:8080/actuator/health) == "200" ]
+    if [ $(curl -s -w "%{http_code}" -o /dev/null http://catalog-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/actuator/health) == "200" ]
     then
         MSG="\033[0;32mThe request to Catalog Service has succeeded\033[0m"
     else
@@ -618,7 +618,7 @@ dependencies which is already done for the <strong>Catalog Service</strong>.</p>
 </div>
 <div class="listingblock copypaste">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -w "\n" http://catalog-coolstore:8080/actuator/health</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -w "\n" http://catalog-coolstore.${CHE_WORKSPACE_NAMESPACE}-stage.svc:8080/actuator/health</code></pre>
 </div>
 </div>
 <div class="paragraph">

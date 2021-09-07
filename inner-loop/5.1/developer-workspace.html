@@ -160,7 +160,7 @@ with our library of activities as well.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <a href="https://https://developers.redhat.com/developer-sandbox" target="_blank" rel="noopener">Developer Sandbox for OpenShift</a> is a Kubernetes-native environment for developing
+<p>The <a href="https://developers.redhat.com/developer-sandbox" target="_blank" rel="noopener">Developer Sandbox for OpenShift</a> is a Kubernetes-native environment for developing
 software for OpenShift. You need to follow the <strong>Get Started</strong> process on this web site first, before attempting any of the workshop steps below.</p>
 </div>
 <div class="paragraph">
@@ -188,7 +188,7 @@ perform various tasks via a browser.</p>
 list of projects that your user has permission to work with.</p>
 </div>
 <div class="paragraph">
-<p><code><strong>Select the 'Developer View' then your "-dev" project</strong></code> to be taken to the project overview page
+<p><code><strong>Select the 'Developer View' then your "-stage" project</strong></code> to be taken to the project overview page
 which will list all of the routes, services, deployments, and pods that you have
 running as part of your project. There&#8217;s maybe nothing much there now, but that&#8217;s about to
 change.</p>
@@ -368,7 +368,7 @@ The <strong>Copy login command</strong> can be found in the top right header bar
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/che-runtask.png" alt="Che - RunTask" width="500">
+<img src="_images/che-open-terminal.png" alt="Che - RunTask" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -400,7 +400,7 @@ terminal command to complete this:-</p>
 </div>
 <div class="listingblock copypaste">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">odo project set ${CHE_WORKSPACE_NAMESPACE}-dev</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">odo project set ${CHE_WORKSPACE_NAMESPACE}-stage</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -408,7 +408,7 @@ terminal command to complete this:-</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Switched to project : user-dev</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Switched to project : user-stage</code></pre>
 </div>
 </div>
 </div>
@@ -431,42 +431,47 @@ Creating deployment configurations, build configurations, service routes and oth
 </div>
 </div>
 <div class="paragraph">
-<p>Now you are ready to get started with the labs!</p>
+<p><strong>Now you are ready to get started with the labs!</strong></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trouble_shooting_tips"><a class="anchor" href="#trouble_shooting_tips"></a>Trouble Shooting Tips</h2>
+<h2 id="trouble_shooting_tips"><a class="anchor" href="#trouble_shooting_tips"></a>Workshop Trouble Shooting Tips</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We hope you have a good workshop, but here are a few tips and tricks that may make it run better.</p>
 </div>
-<div class="paragraph">
-<p><code><strong>What browser should I be using for this workshop</strong></code></p>
-</div>
+<div class="sect2">
+<h3 id="_what_browser_should_i_be_using_for_this_workshop"><a class="anchor" href="#_what_browser_should_i_be_using_for_this_workshop"></a>What browser should I be using for this workshop?</h3>
 <div class="paragraph">
 <p>The whole workshop runs in your browser environment which allows us to support a variety of developer platforms from Windows, Mac and Linux.
-We find the best browser for this workshop is Firefox or Chrome browser.</p>
+We find the best browser for this workshop is <strong>Firefox</strong> or <strong>Chrome</strong> browser.</p>
 </div>
-<div class="paragraph">
-<p><code><strong>Workshop stops or freezes</strong></code></p>
 </div>
+<div class="sect2">
+<h3 id="_workshop_stops_or_freezes"><a class="anchor" href="#_workshop_stops_or_freezes"></a>Workshop stops or freezes</h3>
 <div class="paragraph">
 <p>Everything here is browser based so might have the odd glitch. The easiets resoltuion to a number of problems is just to refresh the browser,
 or worse case restart the browser. All you work is stored centrally on our services so you should juts be able to re-attach
-to your workspace and OpenShift project and continue.</p>
+to your workspace and OpenShift project and continue. If refreshing the browser doesn&#8217;t seem to work then try closing the CodeReady browser tab
+and re-launch it from the OpenShift Web Console usng the <strong>apps</strong> button in the header bar.</p>
 </div>
-<div class="paragraph">
-<p><code><strong>Having problems seeing CodeReady Workspace</strong></code></p>
+<div class="imageblock text-center params-link">
+<div class="content">
+<img src="_images/launch-crw.png" alt="Launch CodeReady Workspaces" width="300">
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_having_problems_seeing_codeready_workspace"><a class="anchor" href="#_having_problems_seeing_codeready_workspace"></a>Having problems seeing CodeReady Workspace?</h3>
 <div class="paragraph">
 <p>CodeReady Workspaces use secure web sockets for its UI. If you are having problems try this test web site <a href="https://websocketstest.com" class="bare">https://websocketstest.com</a>.
 All results should be green to proceed. If this test fails please check that you a direct access to the internet, i.e disable any VPNs
 web proxies etc. If you are using a corporate device you may need to switch to a personal computer.</p>
 </div>
-<div class="paragraph">
-<p><code><strong>I&#8217;ve been logged out or need to restart the workspace</strong></code></p>
 </div>
+<div class="sect2">
+<h3 id="_ive_been_logged_out_or_need_to_restart_the_workspace"><a class="anchor" href="#_ive_been_logged_out_or_need_to_restart_the_workspace"></a>I&#8217;ve been logged out or need to restart the workspace</h3>
 <div class="paragraph">
 <p>The workshop will take a few hours to complete all the way through, if you use the system continuosly throughout
 that period you will not see this issue.</p>
@@ -478,20 +483,30 @@ You will need you Sandbox credentials daily but they should be cached.</p>
 <div class="paragraph">
 <p><strong>Re-login from CodeReady</strong> CodeReady can perform local tasks like builds, but usually needs to connect to your openShift project
 to deploy. If your CodeReady deployment tasks fail chance are you need to re-login to OpenShift from CodeReady. Use the instruction
-on this page <strong>Connect Your Workspace to Your OpenShift project</strong>. Also make sure you check that your <code><strong>-dev</strong></code> project is selected.</p>
+on this page <strong>Connect Your Workspace to Your OpenShift project</strong>. Also make sure you check that your <code><strong>-stage</strong></code> project is selected.</p>
 </div>
 <div class="paragraph">
 <p><strong>Restart CodeReady Workspaces</strong> To save resources CodeReady will idle down. You may need to open or start your workspace again. After doing this,
 please check that you repeat the <strong>Connect Your Workspace to Your OpenShift project</strong> step.</p>
 </div>
-<div class="paragraph">
-<p><code><strong>My OpenShift pods have all gone to idle</strong></code></p>
 </div>
+<div class="sect2">
+<h3 id="_my_openshift_pods_have_all_gone_to_idle"><a class="anchor" href="#_my_openshift_pods_have_all_gone_to_idle"></a>My OpenShift pods have all gone to idle</h3>
 <div class="paragraph">
 <p>If left for a long period (like overnight) your OpenShift project will idle down all its running pods. On the
 Topology display they will show up with white rings. Normally these rings would be dark blue if the pod is active. You need to select each
 <strong>Deployment</strong> or <strong>DeploymentConfig</strong> that you have created in turn by clicking on the circle, then on the pop-out select the blue (D) or (DC) text.
 Then using the circle marked as <strong>Scaled to 0</strong> increase the Pod count up to 1. The ring should turn blue aftre about 30 seconds.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_do_i_cleanup_after_running_this_workshop"><a class="anchor" href="#_how_do_i_cleanup_after_running_this_workshop"></a>How do I cleanup after running this workshop?</h3>
+<div class="paragraph">
+<p>There is a terminal task included in the workshop to delete all the elements of the Inner Loop workshop.</p>
+</div>
+<div class="paragraph">
+<p><strong>Click on 'Terminal' &#8594; 'Run Task&#8230;&#8203;' &#8594;  'OpenShift - Cleanup'</strong></p>
+</div>
 </div>
 </div>
 </div>
