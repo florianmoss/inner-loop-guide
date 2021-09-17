@@ -3,7 +3,7 @@ runtime:
 
 site:
   title: OpenShift Inner Loop Workshop for Sandbox
-  url: https://redhat-scholars.github.io/course-template
+  url: https://redhat-scholars.github.io/inner-loop-sandbox
   start_page: inner-loop::index.adoc
 
 content:
