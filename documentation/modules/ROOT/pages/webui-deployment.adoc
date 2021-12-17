@@ -128,6 +128,8 @@ image::openshift-web-annotate.png[OpenShift - Web Annotate, 700]
 In the OpenShift Web Console, from the **Developer view**,
 `*click on the 'Open URL' icon of the Web Service*`
 
+The initial deployment might take 1-2 minutes because the UBI image has to be pulled first.
+
 image::openshift-web-topology.png[OpenShift - Web Topology, 700]
 
 Your browser will be redirect on **your Web Service running on OpenShift**.
