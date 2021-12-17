@@ -6,9 +6,10 @@
 
 _15 MINUTE EXERCISE_
 
-
-IMPORTANT:  This exercise will unfortunately not work in the sandbox environment due to resource constraints. It is still worth reading through it and understanding how ConfigMaps can be used
-
+[WARNING]
+====
+This exercise will unfortunately not work in the sandbox environment due to resource constraints. It is still worth reading through it and understanding how ConfigMaps can be used
+====
 
 In this lab you will learn how to manage application configuration and how to provide environment 
 specific configuration to the services.
