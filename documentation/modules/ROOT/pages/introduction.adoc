@@ -3,7 +3,15 @@
 
 _10 MINUTE EXERCISE_
 
-*Note:* This workshop was last updated by Florian Moss to be compatible with the latest developer sandbox version in December 2021
+[NOTE]
+====
+This workshop was last updated by Florian Moss to be compatible with the latest developer sandbox version in December 2021
+====
+
+[IMPORTANT]
+====
+Please read the section at the bottom of this page about resource constraints and housekeeping.
+====
 
 
 In this workshop you will learn how to develop and deploy a microservices based application. 
