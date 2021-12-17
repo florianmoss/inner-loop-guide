@@ -57,7 +57,7 @@ Then, enter the following information:
 |Value
 
 |Git Repo URL
-|\https://github.com/alexgroom/cloud-native-workshop.git
+|https://github.com/florianmoss/cloud-native-workshop.git
 
 |Git Reference
 |5.1
@@ -69,7 +69,7 @@ Then, enter the following information:
 |Node.js
 
 |Builder Image Version
-|12-ubi7
+|14-ubi8
 
 |Application Name
 |coolstore
@@ -90,10 +90,12 @@ app.kubernetes.io/instance=web
 
 app.kubernetes.io/part-of=coolstore
 
-
 |===
 
-`*Click on 'Create' button*` 
+`*Click on the 'Create' button*` 
+
+image::node1.png[OpenShift - Node1 from Git, 700]
+image::node2.png[OpenShift - Node2 from Git, 700]
 
 [#update_annotations]
 == Update Annotations

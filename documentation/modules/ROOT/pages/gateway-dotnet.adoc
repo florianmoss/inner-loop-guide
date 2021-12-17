@@ -170,6 +170,7 @@ IDE Task::
 -- 
 `*Click on 'Terminal' -> 'Run Task...' and execute the 'Gateway' tasks in the correct order.*`
 
+*Hint:* Check the Spring Boot Service instructions if you can't remember what to do. Don't forget to expose the port.
 image::che-runtask.png[Che - RunTask, 500]
 --
 
@@ -187,6 +188,8 @@ cd /projects/workshop/labs/gateway-dotnet
 
 NOTE: Unlike Catalog and Inventory service, you are going to push the **'gateway-dotnet/'** folder as an input to OpenShift. 
 OpenShift will build the .NET .dll file from the project file and source code for you.
+
+NOTE: Check your shell history for the right commands if you can't remember them. Don't forget to expose the right port.
 
 .OpenShift New Component
 [%header,cols=2*]
@@ -244,8 +247,6 @@ The Gateway Component needs to be `*connected to the Inventory and Catalog compo
 OpenShift provides linking mechanisms to publish communication bindings from a program to its clients by injecting the environment variables **COMPONENT_xxx_HOST** and **COMPONENT_xxx_PORT**.
 
 We are using a simple binding here between services, but in advanced labs you may learn about using service discovery or Service Mesh to make this binding dynamic.
-
-In your Workspace,
 
 [tabs, subs="attributes+,+macros"]
 ====

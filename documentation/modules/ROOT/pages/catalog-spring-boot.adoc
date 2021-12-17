@@ -314,13 +314,10 @@ NOTE: To open a '>_ workshop_tools' terminal window, `*click on 'Terminal' -> 'O
 --
 ====
 
-When pop-ups appear, `*confirm you want to expose the 9000 port*`.
+When pop-ups appear, `*confirm you want to open port 9000*` in the same way as before.
 
 image::che-expose-9000-port.png[Che - Expose Port, 500]
 
-And finally `*click on 'Open Link'*`.
-
-image::che-open-9000-link.png[Che - Open Link, 500]
 
 Your browser will be redirect on **your Catalog Service running inside your Workspace**.
 
@@ -328,7 +325,7 @@ image::catalog-service.png[Catalog Service,500]
 
 [NOTE]
 ====
-If you have the following result on the 'Preview' window, please `*click on the refresh icon of this same window`*,
+If you have the following result on the 'Preview' window, please `*click on the refresh icon of this same window*`. The deployment can take up to a minute due to the resource constraints - have some patience!
 
 image::che-preview-na.png[Che - Preview Not Available, 500]
 ====
