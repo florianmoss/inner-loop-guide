@@ -171,6 +171,7 @@ IDE Task::
 `*Click on 'Terminal' -> 'Run Task...' and execute the 'Gateway' tasks in the correct order.*`
 
 *Hint:* Check the Spring Boot Service instructions if you can't remember what to do. Don't forget to expose the port.
+
 image::che-runtask.png[Che - RunTask, 500]
 --
 
