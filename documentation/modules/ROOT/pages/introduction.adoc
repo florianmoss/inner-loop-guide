@@ -1,9 +1,8 @@
 = Introduction
 :navtitle: Introduction
 
-_2 MINUTE EXERCISE_
+_10 MINUTE EXERCISE_
 
-Test
 In this workshop you will learn how to develop and deploy a microservices based application. 
 
 The overall architecture of the application that you will deploy is the following:
@@ -24,5 +23,13 @@ image::coolstore-web.png[CoolStore Shop,840]
 In addition to the application code, you will learn how to deploy the various services to OpenShift and how to use it to route the trafic to these services and monitor them.
 
 You will also have the opportunity to look at some optional steps such as debugging, continuous delivery, externalized configuration and more.
+
+[#developer_sandbox_housekeeping]
+== Developer Sandbox Housekeeping
+
+The developer sandboxes are quite small in terms of assigned quota. We need to make sure that all other applications, deployments, imagestreams, routes, serices and persisten 
+volumes have been deleted before we can get started with this workshop.
+
+If you have an existing developer sandbox, now is a good time to do that. Make sure that you are cleaning both, `*dev and stage*`. 
 
 Let's start the workshop with the discovery of OpenShift and CodeReady Workspaces.
