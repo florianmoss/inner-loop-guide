@@ -3,10 +3,6 @@
 
 _10 MINUTE EXERCISE_
 
-[NOTE]
-====
-This workshop was last updated by Florian Moss to be compatible with the latest developer sandbox version in December 2021
-====
 
 [IMPORTANT]
 ====

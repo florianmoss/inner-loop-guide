@@ -13,3 +13,8 @@ The goal of this hands-workshop is to provide a Developer Experience through the
 
 To be a part of this journey, all you need is to come your modern web browser. 
 Everything else is running on the Cloud, on OpenShift
+
+[NOTE]
+====
+This workshop was last updated by Florian Moss to be compatible with the latest developer sandbox version in December 2021
+====
