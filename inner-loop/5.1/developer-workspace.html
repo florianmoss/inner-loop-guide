@@ -268,7 +268,7 @@ change.</p>
 <td class="content">
 <div class="title">Devfile</div>
 <div class="paragraph">
-<p><a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> uses <a href="https://docs.devfile.io/devfile/index.html" target="_blank" rel="noopener">Devfiles</a> to automate the provisioning of a specific workspace by defining:</p>
+<p><a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> uses <a href="https://devfile.io/docs/devfile/2.1.0/user-guide/index.html" target="_blank" rel="noopener">Devfiles</a> to automate the provisioning of a specific workspace by defining:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -290,7 +290,7 @@ change.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Providing a <a href="https://github.com/alexgroom/cloud-native-workshop/blob/5.1/devfile.yaml" target="_blank" rel="noopener">devfile.yaml</a> file inside a Git source repository signals to <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> to configure the project and runtime according
+<p>Providing a <a href="https://github.com/florianmoss/cloud-native-workshop/blob/5.1/devfile.yaml" target="_blank" rel="noopener">devfile.yaml</a> file inside a Git source repository signals to <a href="https://access.redhat.com/products/red-hat-codeready-workspaces" target="_blank" rel="noopener">CodeReady Workspaces</a> to configure the project and runtime according
 to this file.</p>
 </div>
 </td>
@@ -313,7 +313,7 @@ to this file.</p>
 </div>
 <div class="listingblock copypaste">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">https://github.com/alexgroom/cloud-native-workshop.git</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">https://github.com/florianmoss/cloud-native-workshop.git</code></pre>
 </div>
 </div>
 <div class="imageblock text-center">
@@ -323,7 +323,7 @@ to this file.</p>
 </div>
 <div class="paragraph">
 <p>Once completed, you will have a fully functional Browser-based IDE within the source code already imported and
-the IDE configured for our workshop tasks.</p>
+the IDE configured for our workshop tasks. Deploying this workspace can take 2-3 minutes due to the resource constraints on the sandbox.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -387,10 +387,10 @@ Logged into "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443" as "user" us
 
 You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
 
-  * user-dev
-    user-stage
+  * florianmoss-dev
+    florianmoss-stage
 
-Using project "user-dev".
+Using project "florianmoss-dev".
 Welcome! See 'oc help' to get started.</code></pre>
 </div>
 </div>
@@ -408,7 +408,15 @@ terminal command to complete this:-</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Switched to project : user-stage</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Switched to project : florianmoss-stage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure to accept the prompt in the bottom right corner of your screen, as seen below:</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/accept-git-repo.png" alt="Accept Git Repo" width="300">
 </div>
 </div>
 </div>
@@ -420,13 +428,13 @@ terminal command to complete this:-</p>
 <div class="content">
 <div class="title">OpenShift Do (odo)</div>
 <div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">OpenShift Do (odo)</a> is a CLI tool for creating applications on OpenShift Container Platform and Kubernetes.
-With <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>, you can write, build, and debug applications on a cluster without the need to administer the cluster itself.
-Creating deployment configurations, build configurations, service routes and other OpenShift Container Platform or Kubernetes elements are all automated by <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>.</p>
+<p><a href="https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">OpenShift Do (odo)</a> is a CLI tool for creating applications on OpenShift Container Platform and Kubernetes.
+With <a href="https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>, you can write, build, and debug applications on a cluster without the need to administer the cluster itself.
+Creating deployment configurations, build configurations, service routes and other OpenShift Container Platform or Kubernetes elements are all automated by <a href="https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a>.</p>
 </div>
 <div class="paragraph">
-<p>Existing tools such as <a href="https://docs.openshift.com/container-platform/4.6/cli_reference/openshift_cli/getting-started-cli.html" target="_blank" rel="noopener">OpenShift CLI (oc)</a> are operations-focused and require a deep understanding of Kubernetes and OpenShift Container Platform concepts.
-<a href="https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a> abstracts away complex Kubernetes and OpenShift Container Platform concepts allowing developers to focus on what is most important to them: <strong>code</strong>.</p>
+<p>Existing tools such as <a href="https://docs.openshift.com/container-platform/4.9/cli_reference/openshift_cli/getting-started-cli.html" target="_blank" rel="noopener">OpenShift CLI (oc)</a> are operations-focused and require a deep understanding of Kubernetes and OpenShift Container Platform concepts.
+<a href="https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html" target="_blank" rel="noopener">odo</a> abstracts away complex Kubernetes and OpenShift Container Platform concepts allowing developers to focus on what is most important to them: <strong>code</strong>.</p>
 </div>
 </div>
 </div>
