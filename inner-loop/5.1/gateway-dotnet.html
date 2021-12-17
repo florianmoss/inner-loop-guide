@@ -355,10 +355,9 @@ by using the following parameters:</p>
 <div class="paragraph">
 <p><code><strong>Click on 'Terminal' &#8594; 'Run Task&#8230;&#8203;' and execute the 'Gateway' tasks in the correct order.</strong></code></p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/che-runtask.png" alt="Che - RunTask" width="500">
-</div>
+<div class="paragraph">
+<p><strong>Hint:</strong> Check the Spring Boot Service instructions if you can&#8217;t remember what to do. Don&#8217;t forget to expose the port.
+image::che-runtask.png[Che - RunTask, 500]</p>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset1_cli">
@@ -382,6 +381,18 @@ by using the following parameters:</p>
 <td class="content">
 Unlike Catalog and Inventory service, you are going to push the <strong>'gateway-dotnet/'</strong> folder as an input to OpenShift.
 OpenShift will build the .NET .dll file from the project file and source code for you.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Check your shell history for the right commands if you can&#8217;t remember them. Don&#8217;t forget to expose the right port.
 </td>
 </tr>
 </table>
@@ -489,9 +500,6 @@ OpenShift provides linking mechanisms to publish communication bindings from a p
 </div>
 <div class="paragraph">
 <p>We are using a simple binding here between services, but in advanced labs you may learn about using service discovery or Service Mesh to make this binding dynamic.</p>
-</div>
-<div class="paragraph">
-<p>In your Workspace,</p>
 </div>
 <div class="tabset is-loading">
 <div class="ulist tabs">
