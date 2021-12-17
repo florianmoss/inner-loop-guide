@@ -6,6 +6,7 @@
 
 _15 MINUTE EXERCISE_
 
+
 IMPORTANT:  This exercise will unfortunately not work in the sandbox environment due to resource constraints. It is still worth reading through it and understanding how ConfigMaps can be used
 
 
