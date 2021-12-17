@@ -225,10 +225,10 @@ We find the best browser for this workshop is *Firefox* or *Chrome* browser.
 
 === Workshop stops or freezes ===
 
-Everything here is browser based so might have the odd glitch. The easiets resoltuion to a number of problems is just to refresh the browser, 
-or worse case restart the browser. All you work is stored centrally on our services so you should juts be able to re-attach 
+Everything here is browser based so might have the odd glitch. The easiest resolution to a number of problems is just to refresh the browser, 
+or worse case restart the browser. All you work is stored centrally on our servers so you should just be able to re-attach 
 to your workspace and OpenShift project and continue. If refreshing the browser doesn't seem to work then try closing the CodeReady browser tab 
-and re-launch it from the OpenShift Web Console usng the *apps* button in the header bar.
+and re-launching it from the OpenShift Web Console usng the *apps* button in the header bar.
 
 [window=_blank, align="center"]
 [role='params-link']
@@ -242,14 +242,14 @@ web proxies etc. If you are using a corporate device you may need to switch to a
 
 === I've been logged out or need to restart the workspace ===
 
-The workshop will take a few hours to complete all the way through, if you use the system continuosly throughout 
+The workshop will take a few hours to complete all the way through, if you use the system continuously throughout 
 that period you will not see this issue.
 
 *Re-login to the Red Hat* Your authentication token will need to refresh for security so expect to have login again. 
 You will need you Sandbox credentials daily but they should be cached.
 
 *Re-login from CodeReady* CodeReady can perform local tasks like builds, but usually needs to connect to your openShift project
-to deploy. If your CodeReady deployment tasks fail chance are you need to re-login to OpenShift from CodeReady. Use the instruction
+to deploy. If your CodeReady deployment tasks fails, chances are you need to re-login to OpenShift from CodeReady. Use the instructions
 on this page *Connect Your Workspace to Your OpenShift project*. Also make sure you check that your `*-stage*` project is selected.
 
 *Restart CodeReady Workspaces* To save resources CodeReady will idle down. You may need to open or start your workspace again. After doing this, 
@@ -260,10 +260,14 @@ please check that you repeat the *Connect Your Workspace to Your OpenShift proje
 If left for a long period (like overnight) your OpenShift project will idle down all its running pods. On the 
 Topology display they will show up with white rings. Normally these rings would be dark blue if the pod is active. You need to select each 
 *Deployment* or *DeploymentConfig* that you have created in turn by clicking on the circle, then on the pop-out select the blue (D) or (DC) text. 
-Then using the circle marked as *Scaled to 0* increase the Pod count up to 1. The ring should turn blue aftre about 30 seconds.
+Then using the circle marked as *Scaled to 0* increase the Pod count up to 1. The ring should turn blue after about 30 seconds.
 
 === How do I cleanup after running this workshop? ===
 
 There is a terminal task included in the workshop to delete all the elements of the Inner Loop workshop.
 
 *Click on 'Terminal' -> 'Run Task...' ->  'OpenShift - Cleanup'*
+
+=== My odo push command fails ===
+
+The *odo push* command sometimes fails to deploy reporting failed to *tar -xf*. If this happens the easiest fix is to use a CodeReady terminal window, *cd* to the appropriate directory where your service code is located and then perform *odo delete* and the retry the *odo push* command.
