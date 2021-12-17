@@ -135,6 +135,18 @@
 <div class="paragraph">
 <p><em>15 MINUTE EXERCISE</em></p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This exercise will unfortunately not work in the sandbox environment due to resource constraints. It is still worth reading through it and understanding how ConfigMaps can be used
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>In this lab you will learn how to manage application configuration and how to provide environment
 specific configuration to the services.</p>
@@ -158,7 +170,7 @@ should be externalized from the application and the container image content in
 order to keep the image portable across environments.</p>
 </div>
 <div class="paragraph">
-<p>OpenShift provides a mechanism called <a href="https://docs.openshift.com/container-platform/4.2/welcome/index.html" target="_blank" rel="noopener"><strong>ConfigMaps</strong></a>
+<p>OpenShift provides a mechanism called <a href="https://docs.openshift.com/container-platform/4.9/nodes/pods/nodes-pods-configmaps.html" target="_blank" rel="noopener"><strong>ConfigMaps</strong></a>
 in order to externalize configurations
 from the applications deployed within containers and provide them to the containers
 in a unified way as files and environment variables. OpenShift also offers a way to
@@ -191,7 +203,7 @@ regardless of what happens to the container itself, the data is safe and can be 
 database container.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s create a <a href="https://docs.openshift.com/container-platform/4.7/welcome/index.html" target="_blank" rel="noopener">MariaDB database</a>
+<p>Let&#8217;s create a <strong>MariaDB</strong> database
 for the <strong>Inventory Service</strong> using the MariaDB template that is provided out-of-the-box:</p>
 </div>
 <div class="admonitionblock tip">
@@ -202,7 +214,7 @@ for the <strong>Inventory Service</strong> using the MariaDB template that is pr
 </td>
 <td class="content">
 <div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.2/openshift_images/using-templates.html" target="_blank" rel="noopener">OpenShift Templates</a> use YAML/JSON to compose
+<p><a href="https://docs.openshift.com/container-platform/4.9/openshift_images/using-templates.html" target="_blank" rel="noopener">OpenShift Templates</a> use YAML/JSON to compose
 multiple containers and their configurations as a list of objects to be created and deployed at once,
 making it simple to re-create complex deployments by just deploying a single template. Templates can
 be parameterized to get input for fields like service names and generate values for fields like passwords.</p>
@@ -252,23 +264,23 @@ be parameterized to get input for fields like service names and generate values 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Database Service Name*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inventory-mariadb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inventory-mariadb</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MariaDB Connection Username</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inventory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inventory</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MariaDB Connection Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inventory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inventory</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MariaDB root Password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inventoryadmin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inventoryadmin</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MariaDB Database Name*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inventorydb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>inventorydb</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Version of MariaDB Image*</p></td>
