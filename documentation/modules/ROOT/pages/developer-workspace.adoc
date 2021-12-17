@@ -82,7 +82,7 @@ https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Worksp
 [NOTE]
 .Devfile
 ====
-https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] uses https://docs.devfile.io/devfile/index.html[Devfiles^] to automate the provisioning of a specific workspace by defining:
+https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] uses https://devfile.io/docs/devfile/2.1.0/user-guide/index.html[Devfiles^] to automate the provisioning of a specific workspace by defining:
 
 * projects to clone
 * browser IDE to use
@@ -90,7 +90,7 @@ https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Worksp
 * tools that you need
 * application runtime definition
 
-Providing a https://github.com/alexgroom/cloud-native-workshop/blob/5.1/devfile.yaml[devfile.yaml^] file inside a Git source repository signals to https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] to configure the project and runtime according 
+Providing a https://github.com/florianmoss/cloud-native-workshop/blob/5.1/devfile.yaml[devfile.yaml^] file inside a Git source repository signals to https://access.redhat.com/products/red-hat-codeready-workspaces[CodeReady Workspaces^] to configure the project and runtime according 
 to this file.
 ====
 
@@ -106,14 +106,14 @@ When CodeReady Workspaces starts, enter the following URL into the *Git Repo URL
 
 [source,shell,subs="{markup-in-source}",role=copypaste]
 ----
-https://github.com/alexgroom/cloud-native-workshop.git
+https://github.com/florianmoss/cloud-native-workshop.git
 ---- 
 
 [window=_blank, align="center"]
 image::enter-devfile.png[Launching the workspace , 500]
 
 Once completed, you will have a fully functional Browser-based IDE within the source code already imported and 
-the IDE configured for our workshop tasks.
+the IDE configured for our workshop tasks. Deploying this workspace can take 2-3 minutes due to the resource constraints on the sandbox.
 
 image::che-workspace.png[Che - Workspace, 700]
 
@@ -164,10 +164,10 @@ Logged into "https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443" as "user" us
 
 You have access to the following projects and can switch between them with 'oc project <projectname>':
 
-  * user-dev
-    user-stage
+  * florianmoss-dev
+    florianmoss-stage
 
-Using project "user-dev".
+Using project "florianmoss-dev".
 Welcome! See 'oc help' to get started.
 ----
 
@@ -183,8 +183,13 @@ And this should confirm the action with a response like this:
 
 [source,shell,subs="{markup-in-source}"]
 ----
-Switched to project : user-stage
+Switched to project : florianmoss-stage
 ----
+
+
+Make sure to accept the prompt in the bottom right corner of your screen, as seen below:  
+[window=_blank, align="center"]
+image::accept-git-repo.png[Accept Git Repo , 300]
 
 
 [#what_is_odo]
@@ -194,12 +199,12 @@ Switched to project : user-stage
 .OpenShift Do (odo)
 --
 
-https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html[OpenShift Do (odo)^] is a CLI tool for creating applications on OpenShift Container Platform and Kubernetes. 
-With https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html[odo^], you can write, build, and debug applications on a cluster without the need to administer the cluster itself. 
-Creating deployment configurations, build configurations, service routes and other OpenShift Container Platform or Kubernetes elements are all automated by https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html[odo^].
+https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html[OpenShift Do (odo)^] is a CLI tool for creating applications on OpenShift Container Platform and Kubernetes. 
+With https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html[odo^], you can write, build, and debug applications on a cluster without the need to administer the cluster itself. 
+Creating deployment configurations, build configurations, service routes and other OpenShift Container Platform or Kubernetes elements are all automated by https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html[odo^].
 
-Existing tools such as https://docs.openshift.com/container-platform/4.6/cli_reference/openshift_cli/getting-started-cli.html[OpenShift CLI (oc)^] are operations-focused and require a deep understanding of Kubernetes and OpenShift Container Platform concepts. 
-https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html[odo^] abstracts away complex Kubernetes and OpenShift Container Platform concepts allowing developers to focus on what is most important to them: **code**.
+Existing tools such as https://docs.openshift.com/container-platform/4.9/cli_reference/openshift_cli/getting-started-cli.html[OpenShift CLI (oc)^] are operations-focused and require a deep understanding of Kubernetes and OpenShift Container Platform concepts. 
+https://docs.openshift.com/container-platform/4.9/cli_reference/developer_cli_odo/understanding-odo.html[odo^] abstracts away complex Kubernetes and OpenShift Container Platform concepts allowing developers to focus on what is most important to them: **code**.
 
 --
 

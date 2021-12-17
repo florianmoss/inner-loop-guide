@@ -3,6 +3,9 @@
 
 _10 MINUTE EXERCISE_
 
+*Note:* This workshop was last updated by Florian Moss to be compatible with the latest developer sandbox version in December 2021
+
+
 In this workshop you will learn how to develop and deploy a microservices based application. 
 
 The overall architecture of the application that you will deploy is the following:
