@@ -3,12 +3,12 @@ runtime:
 
 site:
   title: OpenShift Inner Loop Workshop for Sandbox
-  url: https://redhat-scholars.github.io/inner-loop-sandbox
+  url: https://florianmoss.github.io/inner-loop-sandbox
   start_page: inner-loop::index.adoc
 
 content:
   sources:
-    - url: git@github.com:alexgroom/inner-loop-guide.git
+    - url: git@github.com:florianmoss/inner-loop-guide.git
       tags: []
       branches: ["5.1"]
       start_path: documentation
